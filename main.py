@@ -4,8 +4,8 @@ import os
 
 def render_sidebar():
     with st.sidebar:
-        st.title("Example App")
-        st.markdown("A simple multi-page Streamlit app template.")
+        st.title("Café e prosa!")
+        st.markdown("Um lugar onde você pode comprar produtos relacionados a café.")
 
         page = st.radio("Go to", ["Home", "Produtos"])
     return page
