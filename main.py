@@ -7,7 +7,7 @@ def render_sidebar():
         st.title("Example App")
         st.markdown("A simple multi-page Streamlit app template.")
 
-        page = st.radio("Go to", ["Home", "Products"])
+        page = st.radio("Go to", ["Home", "Produtos"])
     return page
 
 
@@ -18,7 +18,7 @@ def main():
     if page == "Home":
         from pages.home import render_home
         render_home()
-    elif page == "Products":
+    elif page == "Produtos":
         from pages.products import render_products
         render_products()
     if "cart" not in st.session_state:
