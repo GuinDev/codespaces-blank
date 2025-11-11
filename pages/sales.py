@@ -1,10 +1,9 @@
 import streamlit as st
-import pandas as pd
 
 
-def render_products():
-    st.set_page_config(page_title="Produtos", layout="wide")
-    st.title("Produtos")
+def render_sales():
+    st.set_page_config(page_title="Vendas", layout="wide")
+    st.title("Vendas")
 
     produtos = [
         {"id": 1, "name": "Classic Mug", "price": 12.0, "desc": "Ceramic, 300ml ☕", "categoria": "caneca"},
@@ -12,12 +11,6 @@ def render_products():
         {"id": 3, "name": "Sticker Pack", "price": 4.0, "desc": "10 vinyl stickers ✨", "categoria": "caneca"},
         {"id": 4, "name": "café com leite", "price": 15.0, "desc": "Cotton, spacious 🛍️", "categoria": "caneca"},
     ]
-
-    categorias = ["caneca", "alimentos", "cha", "cafe"]
-
-    # initialize cart in session state
-    if "cart" not in st.session_state:
-        st.session_state.cart = 0
 
     cols_per_row = 3
     for i in range(0, len(produtos), cols_per_row):
@@ -36,17 +29,3 @@ def render_products():
                     st.session_state.cart += 1
                     st.success(
                         f"Adicionado {p['name']} ao carrinho (total: {st.session_state.cart})")
-
-    st.write("Here's our first attempt at using data to create a table:")
-    st.write(pd.DataFrame({
-    'first column': [1, 2, 3, 4],
-    'second column': [10, 20, 30, 40]
-    }))
-
-    left, middle, right = st.columns(3)
-    if left.button("Adicionar produto", width="stretch"):
-        left.markdown("You clicked the adicionar button.")
-    if middle.button("Editar produto", width="stretch"):
-        middle.markdown("You clicked the edit button.")
-    if right.button("Excluir produto", width="stretch"):
-        right.markdown("You clicked the excluir button.") 
