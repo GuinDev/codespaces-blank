@@ -5,7 +5,7 @@ import os
 ALL_PAGES = ["Home", "Produtos", "Funcionarios", "Vendas", "Admin"]
 
 # URL FOR ADMIN: http://localhost:8501/?page=Admin&token=my-secret-admin
-# env:ADMIN_KEY="my-secret-admin" in powershell, why is it not working
+# $env:ADMIN_KEY = "my-secret-admin" in powershell
 
 
 def render_sidebar():
