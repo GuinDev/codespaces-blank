@@ -54,9 +54,6 @@ def main():
     elif page == "Produtos":
         from pages.products import render_products
         render_products()
-    elif page == "Funcionarios":
-        from pages.employees import render_employees
-        render_employees()
     elif page == "Vendas":
         from pages.sales import render_sales
         render_sales()
